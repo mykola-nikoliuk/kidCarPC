@@ -7,6 +7,8 @@
 bool isHighBeam = false;
 
 void setup() {
+  Serial.begin(115200);
+
   led.begin();
   pinMode(HIGH_BEAM_PIN, OUTPUT);
   setupButtons();
@@ -17,7 +19,7 @@ void loop() {
   handleBlinker();
 
 
-  if (centralButton.isClick()) {
+  if (centralButton.isHolded()) {
     isHighBeam = !isHighBeam;
     digitalWrite(HIGH_BEAM_PIN, isHighBeam);
   }

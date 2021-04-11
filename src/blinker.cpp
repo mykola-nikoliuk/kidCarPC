@@ -41,7 +41,7 @@ void handleBlinker() {
     uint32_t time = millis() - blinkerStartTime;
     bool isBlinkerHigh = time % BLINKER_PERIOD < BLINKER_PERIOD / 2;
 
-    uint32_t color = isBlinkerEnabled ? yellowColor ; noneColor;
+    uint32_t color = isBlinkerEnabled ? yellowColor : noneColor;
 
     setPixelLine(FL_BLINKER, FRONT_BLINKER_AMOUNT, color);
     setPixelLine(FR_BLINKER, FRONT_BLINKER_AMOUNT, color);
